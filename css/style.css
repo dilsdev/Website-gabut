@@ -1,0 +1,398 @@
+/* 
+CODE
+1rem=16px
+
+*/
+
+/* untuk buat variabel baru */
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* text-decoration agar tidak ada garis bawah waktu buat link */
+}
+html {
+  scroll-behavior: smooth;
+  /* agar csrollnya smoot!!!!!!!!!!!! */
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  /*space-between agar sejajar horizontal */
+  align-items: center;
+  /* center agar sejajar vertical */
+  padding: 1.4rem 7%;
+  /* 7% agar ada jarak di pinggir sebesar 7% */
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #886643;
+  position: fixed;
+  /* (position) ketika halaman di scrol navbar tetap diam di atas */
+  top: 0;
+  /* top: agar mentok ke atas */
+  left: 0;
+  right: 0;
+  /* left: 0; right: 0; agar tarik ke kiri dan ke kanan*/
+  z-index: 9999;
+  /* agar tidak ada elemen lain yang mengalahkan urutan tumpukannya */
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  /* 2rem= 2x16 piksel */
+  font-weight: 700;
+  /* agar bold */
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-nav a {
+  /* agar fokus ke A */
+
+  color: #fff;
+  display: inline-block;
+  /* narik ke bawah meskipun di kasih mergin.  */
+  font: size 1.3rem;
+  margin: 0 1rem;
+  /* 1rem=16px */
+}
+
+.navbar .navbar-nav a:hover {
+  /* untuk berubah warna ketika di sentuh */
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  /* untuk buat garis bawah */
+  content: "";
+  /* seupaya bisa atur dimensinya */
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  /* agar garis bawah hilang  */
+  transition: 0.2s linear;
+  /* buat transisi */
+}
+
+.navbar .navbar-nav a:hover::after {
+  /* agar garis bawah kembali muncul ketika di sentuh */
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0, 5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  /* untuk berubah warna ketika di sentuh */
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  /* menghilangkan logo menu */
+  display: none;
+}
+
+/* hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* biar tidak mengganggu posisi aslinya */
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  /* agar mentok ke bawah */
+  width: 100%;
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 10%,
+    rgba(255, 255, 255, 0) 20%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  /* 1.4 rem untuk bawah 7% untuk kiri kanan */
+  max-width: 60rem;
+  /* agar tidak mepet */
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+  /* jarak antara kalimat atas dan bawah */
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  /* jarak antara kalimat atas dan bawah */
+  /* font-weight: 100; */
+  /* agar tipis */
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+  /* ketika teks nya bertemu warna yg sama otomatis warnanya berubah(agar bisa di baca) */
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  /* atasbawah 1rem. kiri kanan 3rem */
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* abaut section */
+.abaut,
+.menu,
+.contact {
+  /* judul abaut menu contact */
+  padding: 8rem 7% 1.4rem;
+  /* atasnya 8rem kiri kanan 7% bawah 1.4rem */
+}
+
+.abaut h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  /* agar h2 ke tengah */
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.abaut h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+.abaut .row {
+  display: flex;
+}
+
+.abaut .row .abaut-img {
+  flex: 1 1 50rem;
+}
+
+.abaut .row .abaut-img img {
+  width: 98%;
+}
+
+.abaut .row .content {
+  flex: 1 1 45rem;
+  padding: 0 1rem;
+}
+
+.abaut .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.abaut .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 1.6;
+  height: 20rem;
+}
+
+/* menu section */
+.menu h2,
+.contact h2 {
+  margin: 1rem;
+}
+.menu p,
+.contact p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  /* supaya kalo kebanyakan maka turun ke bawah. agar tidak mengatur di media query lagi */
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.menu .row .menu-card {
+  text-align: center;
+
+  padding-bottom: 2rem;
+  width: 19rem;
+  /* agar ukuran bacronnya kecil */
+}
+
+.menu .row .menu-card img {
+  border-radius: 50%;
+  width: 80%;
+  /* agar gambarnya kecil */
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin: 1rem auto 0.5;
+  /* atas baawah 1rem, kiri kanan auto, bawhnya 0.5 rem */
+}
+
+/* footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+footer .social a {
+  color: #fff;
+  margin: 1rem;
+}
+footer .social a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+/* media queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+/* tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62%;
+  }
+
+  #hamburger-menu {
+    /* untuk memunculkan logo  */
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    /* agar navbar tengah hilang saat di handpone */
+
+    position: absolute;
+    /* supaya bisa dengan mudah gerakin tanpa ngeganngu elemen di sekitarnya */
+    top: 100%;
+    /* agar mentok ke atas */
+    right: -100%;
+    /* supaya keluar dari layar */
+    background-color: #e2bdbd;
+    width: 35%;
+    /* lebar */
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+    /* agar garis bawahnya di kiri */
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.3);
+    /* panjang garis bawah */
+  }
+  .abaut .row {
+    flex-wrap: wrap;
+    /* jika tablet tulisannya turun ke bawah */
+  }
+
+  .abaut .row .abaut-img img {
+    height: 24rem;
+    object-fit: cover;
+    /* agar tidak ketarik/gepeng */
+    object-position: center;
+  }
+  .abaut .row .content {
+    padding: 0 1rem;
+  }
+  .abaut .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .abaut .row .content p {
+    font-size: 1.6rem;
+  }
+  .menu p {
+    font-size: 1.4rem;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
