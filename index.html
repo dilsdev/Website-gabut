@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dil gans</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet"
     />
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- my style -->
     <link rel="stylesheet" href="css/style.css" />
+    <title>dil gans</title>
+
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <!-- navbar start -->
@@ -55,13 +57,14 @@
     <!-- abaut section start -->
 
     <section id="abaut" class="abaut">
-      <h2><span>tentang </span>GuE</h2>
-
+      <div data-aos="fade-up"><h2><span>tentang </span>GuE</h2>
+</div>
+      
       <div class="row">
-        <div class="abaut-img">
+        <div class="abaut-img" data-aos="fade-right">
           <img src="img/pengangguran.jpg" alt="tentang kami" />
         </div>
-        <div class="conten">
+        <div class="conten" data-aos="fade-left">
           <h3>tentang sya</h3>
           <p>
             saya adalah orang dan bekerja pengangguran. ingat kata pascol <br />
@@ -81,17 +84,17 @@
     <!-- menu section start -->
 
     <section id="menu" class="menu">
-      <h2><span>waifu </span>kami</h2>
+      <div data-aos="fade-up"><h2><span>waifu </span>kami</h2>
       <p>
         di bawah ini adlah gambar waifu saya, waifu adalah gambar gepeng yang
         mustahil dinikahi🗿
-      </p>
+      </p></div>
 
-      <div class="row">
+      <div class="row" data-aos="fade-up">
         <div class="menu-card">
           <img src="img/elaina.jpg" alt="espreso" class="menu-card-img" />
           <h3 id="menu-card-title">Elaina</h3>
-          <p id="menu-card-price">USD 2000$</p>
+          <p id="menu-card-price">USD 20000$</p>
         </div>
         <div class="menu-card">
           <img src="img/anya.jpg" alt="espreso" class="menu-card-img" />
@@ -147,5 +150,9 @@
     </script>
     <!-- my javascript -->
     <script src="js/script.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
