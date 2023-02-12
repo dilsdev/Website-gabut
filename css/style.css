@@ -137,7 +137,7 @@ body {
   height: 100%;
   background: linear-gradient(
     0deg,
-    rgba(1, 1, 3, 1) 10%,
+    rgb(0, 0, 0) 10%,
     rgba(255, 255, 255, 0) 25%
   );
 }
@@ -406,6 +406,6 @@ footer .credit a {
 /* mobile phone */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 60%;
   }
 }
