@@ -403,6 +403,9 @@ footer .credit a {
   .menu p {
     font-size: 1.4rem;
   }
+  .hero{
+      background-image: url("../img/itachi-tablet.jpg");
+  }
 }
 
 /* mobile phone */
